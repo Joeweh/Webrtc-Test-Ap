@@ -12,7 +12,7 @@ var form = document.querySelector("#form"),
 const iceServers = {
   iceServer: [
     {
-      url: "stun.l.google.com:19302"
+      url: "stun:stun.l.google.com:19302"
     },
     {
       url: "numb.viagenie.ca",
