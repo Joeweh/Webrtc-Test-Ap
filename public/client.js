@@ -10,9 +10,16 @@ var form = document.querySelector("#form"),
   connect = document.querySelector("#connect");
 
 const iceServers = {
-  iceServer: {
-    urls: ["stun.l.google.com:19302", "stun1.l.google.com:19302", "stun2.l.google.com:19302", "stun3.l.google.com:19302", "stun4.l.google.com:19302", "stun:stun.l.google.com:19302"]
-  }
+  iceServer: [
+    {
+      url: "stun.l.google.com:19302"
+    },
+    {
+      url: "numb.viagenie.ca",
+      username: "joeyqsa@outlook.com",
+      credential: "obeseclown211"
+    }
+  ]
 };
 
 const pc = new RTCPeerConnection(iceServers);
