@@ -29,6 +29,7 @@ form.onsubmit = function (e) {
 };
 
 hangUp.onclick = function (e) {
+  //socket.to(currentRoom).emit();
   location.reload();
 };
 
@@ -61,6 +62,15 @@ socket.on("room", room => {
   li.innerText = room;
   roomsList.append(li);
 });
+
+socket.on("rooms", roomData => {
+  roomData.forEach((room) => {
+    rooms.push(room)
+    var li = document.createElement("li");
+    li.innerText = room;
+    roomsList.append(li);
+  })
+})
 
 socket.on("join", room => {
   if (currentRoom !== room) return;

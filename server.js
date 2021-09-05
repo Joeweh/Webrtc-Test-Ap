@@ -9,11 +9,15 @@ app.use(express.static("public"));
 
 var socketRoom;
 
+let rooms = []
+
 io.on("connection", socket => {
   console.log("user connected to the socket");
+  socket.emit("rooms", rooms);
 
   socket.on("room", room => {
     io.emit("room", room);
+    rooms.push(room)
   });
 
   socket.on("join", room => {
