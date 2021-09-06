@@ -15,7 +15,7 @@ const iceServers = {
       url: "stun:stun.l.google.com:19302"
     },
     {
-      url: "numb.viagenie.ca",
+      url: "turn:turn.numb.viagenie.ca",
       username: "joeyqsa@outlook.com",
       credential: "obeseclown211"
     }
